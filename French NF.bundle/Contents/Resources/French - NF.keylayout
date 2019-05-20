@@ -1,7 +1,7 @@
 <?xml version="1.1" encoding="UTF-8"?>
 <!DOCTYPE keyboard SYSTEM "file://localhost/System/Library/DTDs/KeyboardLayout.dtd">
 <!-- Fri, 24 Feb 2006 Generated from KCHR: "French" -->
-<!--Last edited by Ukelele version 3.3.0.249 on 2019-05-20 at 17:46 (CEST)-->
+<!--Last edited by Ukelele version 3.3.0.249 on 2019-05-20 at 17:54 (CEST)-->
 <keyboard group="126" id="-14746" name="French - NF" maxout="1">
     <layouts>
         <layout first="0" last="0" mapSet="ANSI" modifiers="commonModifiers"/>
@@ -187,30 +187,30 @@
             <key code="21" output="4"/>
             <key code="22" output="6"/>
             <key code="23" output="5"/>
-            <key code="24" output="_"/>
+            <key code="24" action="̈"/>
             <key code="25" output="9"/>
             <key code="26" output="7"/>
-            <key code="27" output="°"/>
+            <key code="27" output="&#x0022;"/>
             <key code="28" output="8"/>
             <key code="29" output="0"/>
-            <key code="30" output="*"/>
+            <key code="30" output="±"/>
             <key code="31" action="O"/>
             <key code="32" action="U"/>
-            <key code="33" action="¨"/>
+            <key code="33" output="–"/>
             <key code="34" action="I"/>
             <key code="35" output="P"/>
             <key code="36" output="&#x000D;"/>
             <key code="37" output="L"/>
             <key code="38" output="J"/>
-            <key code="39" output="%"/>
+            <key code="39" output="\"/>
             <key code="40" output="K"/>
             <key code="41" output="M"/>
-            <key code="42" output="£"/>
-            <key code="43" output="."/>
-            <key code="44" output="+"/>
+            <key code="42" output="½"/>
+            <key code="43" output="!"/>
+            <key code="44" output="="/>
             <key code="45" action="N"/>
             <key code="46" output="?"/>
-            <key code="47" output="/"/>
+            <key code="47" output="…"/>
             <key code="48" output="&#x0009;"/>
             <key code="49" action=" "/>
             <key code="50" output="&#x003E;"/>
@@ -1105,6 +1105,9 @@
         </action>
         <action id="´">
             <when state="none" next="s5"/>
+        </action>
+        <action id="̈">
+            <when state="none" next="s3"/>
         </action>
     </actions>
     <terminators>
