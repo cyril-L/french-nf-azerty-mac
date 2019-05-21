@@ -1,7 +1,7 @@
 <?xml version="1.1" encoding="UTF-8"?>
 <!DOCTYPE keyboard SYSTEM "file://localhost/System/Library/DTDs/KeyboardLayout.dtd">
 <!-- Fri, 24 Feb 2006 Generated from KCHR: "French" -->
-<!--Last edited by Ukelele version 3.3.0.249 on 2019-05-20 at 19:07 (CEST)-->
+<!--Last edited by Ukelele version 3.3.0.249 on 2019-05-20 at 21:38 (CEST)-->
 <keyboard group="126" id="-14746" name="French - NF" maxout="1">
     <layouts>
         <layout first="0" last="0" mapSet="ANSI" modifiers="commonModifiers"/>
@@ -418,8 +418,8 @@
             <key code="16" output="}"/>
             <key code="17" output="{"/>
             <key code="18" output="§"/>
-            <key code="19" output=""/>
-            <key code="20" output=""/>
+            <key code="19" action="Acute"/>
+            <key code="20" action="Grave"/>
             <key code="21" output="&#x0026;"/>
             <key code="22" output="]"/>
             <key code="23" output="["/>
@@ -992,129 +992,135 @@
     <actions>
         <action id=" ">
             <when state="none" output=" "/>
-            <when state="s1" output="^"/>
-            <when state="s2" output="`"/>
-            <when state="s3" output="¨"/>
-            <when state="s4" output="~"/>
-            <when state="s5" output="´"/>
+            <when state="Acute" output="´"/>
+            <when state="Circumflex" output="^"/>
+            <when state="Diaeresis" output="¨"/>
+            <when state="Grave" output="`"/>
+            <when state="Tilde" output="~"/>
         </action>
         <action id="-">
-            <when state="none" next="s1"/>
+            <when state="none" next="Circumflex"/>
         </action>
         <action id="A">
             <when state="none" output="A"/>
-            <when state="s1" output="Â"/>
-            <when state="s2" output="À"/>
-            <when state="s3" output="Ä"/>
-            <when state="s4" output="Ã"/>
-            <when state="s5" output="Á"/>
+            <when state="Acute" output="Á"/>
+            <when state="Circumflex" output="Â"/>
+            <when state="Diaeresis" output="Ä"/>
+            <when state="Grave" output="À"/>
+            <when state="Tilde" output="Ã"/>
+        </action>
+        <action id="Acute">
+            <when state="none" next="Acute"/>
         </action>
         <action id="E">
             <when state="none" output="E"/>
-            <when state="s1" output="Ê"/>
-            <when state="s2" output="È"/>
-            <when state="s3" output="Ë"/>
-            <when state="s5" output="É"/>
+            <when state="Acute" output="É"/>
+            <when state="Circumflex" output="Ê"/>
+            <when state="Diaeresis" output="Ë"/>
+            <when state="Grave" output="È"/>
+        </action>
+        <action id="Grave">
+            <when state="none" next="Grave"/>
         </action>
         <action id="I">
             <when state="none" output="I"/>
-            <when state="s1" output="Î"/>
-            <when state="s2" output="Ì"/>
-            <when state="s3" output="Ï"/>
-            <when state="s5" output="Í"/>
+            <when state="Acute" output="Í"/>
+            <when state="Circumflex" output="Î"/>
+            <when state="Diaeresis" output="Ï"/>
+            <when state="Grave" output="Ì"/>
         </action>
         <action id="N">
             <when state="none" output="N"/>
-            <when state="s4" output="Ñ"/>
+            <when state="Tilde" output="Ñ"/>
         </action>
         <action id="O">
             <when state="none" output="O"/>
-            <when state="s1" output="Ô"/>
-            <when state="s2" output="Ò"/>
-            <when state="s3" output="Ö"/>
-            <when state="s4" output="Õ"/>
-            <when state="s5" output="Ó"/>
+            <when state="Acute" output="Ó"/>
+            <when state="Circumflex" output="Ô"/>
+            <when state="Diaeresis" output="Ö"/>
+            <when state="Grave" output="Ò"/>
+            <when state="Tilde" output="Õ"/>
         </action>
         <action id="U">
             <when state="none" output="U"/>
-            <when state="s1" output="Û"/>
-            <when state="s2" output="Ù"/>
-            <when state="s3" output="Ü"/>
-            <when state="s5" output="Ú"/>
+            <when state="Acute" output="Ú"/>
+            <when state="Circumflex" output="Û"/>
+            <when state="Diaeresis" output="Ü"/>
+            <when state="Grave" output="Ù"/>
         </action>
         <action id="Y">
             <when state="none" output="Y"/>
-            <when state="s3" output="Ÿ"/>
+            <when state="Diaeresis" output="Ÿ"/>
         </action>
         <action id="^">
-            <when state="none" next="s1"/>
+            <when state="none" next="Circumflex"/>
         </action>
         <action id="`">
-            <when state="none" next="s2"/>
+            <when state="none" next="Grave"/>
         </action>
         <action id="a">
             <when state="none" output="a"/>
-            <when state="s1" output="â"/>
-            <when state="s2" output="à"/>
-            <when state="s3" output="ä"/>
-            <when state="s4" output="ã"/>
-            <when state="s5" output="á"/>
+            <when state="Acute" output="á"/>
+            <when state="Circumflex" output="â"/>
+            <when state="Diaeresis" output="ä"/>
+            <when state="Grave" output="à"/>
+            <when state="Tilde" output="ã"/>
         </action>
         <action id="e">
             <when state="none" output="e"/>
-            <when state="s1" output="ê"/>
-            <when state="s2" output="è"/>
-            <when state="s3" output="ë"/>
-            <when state="s5" output="é"/>
+            <when state="Acute" output="é"/>
+            <when state="Circumflex" output="ê"/>
+            <when state="Diaeresis" output="ë"/>
+            <when state="Grave" output="è"/>
         </action>
         <action id="i">
             <when state="none" output="i"/>
-            <when state="s1" output="î"/>
-            <when state="s2" output="ì"/>
-            <when state="s3" output="ï"/>
-            <when state="s5" output="í"/>
+            <when state="Acute" output="í"/>
+            <when state="Circumflex" output="î"/>
+            <when state="Diaeresis" output="ï"/>
+            <when state="Grave" output="ì"/>
         </action>
         <action id="n">
             <when state="none" output="n"/>
-            <when state="s4" output="ñ"/>
+            <when state="Tilde" output="ñ"/>
         </action>
         <action id="o">
             <when state="none" output="o"/>
-            <when state="s1" output="ô"/>
-            <when state="s2" output="ò"/>
-            <when state="s3" output="ö"/>
-            <when state="s4" output="õ"/>
-            <when state="s5" output="ó"/>
+            <when state="Acute" output="ó"/>
+            <when state="Circumflex" output="ô"/>
+            <when state="Diaeresis" output="ö"/>
+            <when state="Grave" output="ò"/>
+            <when state="Tilde" output="õ"/>
         </action>
         <action id="u">
             <when state="none" output="u"/>
-            <when state="s1" output="û"/>
-            <when state="s2" output="ù"/>
-            <when state="s3" output="ü"/>
-            <when state="s5" output="ú"/>
+            <when state="Acute" output="ú"/>
+            <when state="Circumflex" output="û"/>
+            <when state="Diaeresis" output="ü"/>
+            <when state="Grave" output="ù"/>
         </action>
         <action id="y">
             <when state="none" output="y"/>
-            <when state="s3" output="ÿ"/>
+            <when state="Diaeresis" output="ÿ"/>
         </action>
         <action id="~">
-            <when state="none" next="s4"/>
+            <when state="none" next="Tilde"/>
         </action>
         <action id="¨">
-            <when state="none" next="s3"/>
+            <when state="none" next="Diaeresis"/>
         </action>
         <action id="´">
-            <when state="none" next="s5"/>
+            <when state="none" next="Acute"/>
         </action>
         <action id="̈">
-            <when state="none" next="s3"/>
+            <when state="none" next="Diaeresis"/>
         </action>
     </actions>
     <terminators>
-        <when state="s1" output="^"/>
-        <when state="s2" output="`"/>
-        <when state="s3" output="¨"/>
-        <when state="s4" output="~"/>
-        <when state="s5" output="´"/>
+        <when state="Acute" output="´"/>
+        <when state="Circumflex" output="^"/>
+        <when state="Diaeresis" output="¨"/>
+        <when state="Grave" output="`"/>
+        <when state="Tilde" output="~"/>
     </terminators>
 </keyboard>
