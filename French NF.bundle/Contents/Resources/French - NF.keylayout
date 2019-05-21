@@ -1,7 +1,7 @@
 <?xml version="1.1" encoding="UTF-8"?>
 <!DOCTYPE keyboard SYSTEM "file://localhost/System/Library/DTDs/KeyboardLayout.dtd">
 <!-- Fri, 24 Feb 2006 Generated from KCHR: "French" -->
-<!--Last edited by Ukelele version 3.3.0.249 on 2019-05-20 at 21:38 (CEST)-->
+<!--Last edited by Ukelele version 3.3.0.249 on 2019-05-21 at 08:29 (CEST)-->
 <keyboard group="126" id="-14746" name="French - NF" maxout="1">
     <layouts>
         <layout first="0" last="0" mapSet="ANSI" modifiers="commonModifiers"/>
@@ -566,7 +566,7 @@
             <key code="46" output=""/>
             <key code="47" output=""/>
             <key code="48" output="&#x0009;"/>
-            <key code="49" output=" "/>
+            <key code="49" output=" "/>
             <key code="50" output="≥"/>
             <key code="51" output="&#x0008;"/>
             <key code="52" output="&#x0003;"/>
