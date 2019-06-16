@@ -7,7 +7,7 @@
 	<key>CFBundleName</key>
 	<string>French NF</string>
 	<key>CFBundleVersion</key>
-	<string>0.0.2</string>
+	<string>0.0.3</string>
 	<key>KLInfo_French - NF</key>
 	<dict>
 		<key>TISInputSourceID</key>
