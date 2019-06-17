@@ -17,10 +17,13 @@ Il n’implémente pas encore la plupart des diacritiques peu utilisés en Franc
 - Décompressez le fichier `.zip`
 - Déplacez le fichier `French NF.bundle` dans la bibliothèque :
   - Depuis le *Finder* → `Aller` → `Aller au dossier`
-  - Pour installer le pilote uniquement pour votre utilisateur, entrez `~/Bibliothèque/Keyboard Layouts`
-  - Pour installer le pilote pour tous les utilisateurs, entrez `/Bibliothèque/Keyboard Layouts` (vous devez disposer des droits d’administration)
+  - Pour installer le pilote uniquement pour votre utilisateur, entrez `~/Library/Keyboard Layouts`
+  - Pour installer le pilote pour tous les utilisateurs, entrez `/Library/Keyboard Layouts` (vous devez disposer des droits d’administration)
   - Déplacez le fichier `French NF.bundle` dans le dossier `Keyboard Layouts`
-- Activez la disposition depuis les *Préférences Système* → `Clavier` → `Méthodes et saisie` → `+` → `French - NF` 
+- Activez la disposition depuis les *Préférences Système* → `Clavier` → `Méthodes et saisie` → `+` → `French - NF`
+- Redémarrez votre session
+
+Pour mettre à jour le pilote, remplacez le fichier `.bundle` existant et redémarrez votre session.
 
 ## Contribution
 

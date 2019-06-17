@@ -1,7 +1,7 @@
 <?xml version="1.1" encoding="UTF-8"?>
 <!DOCTYPE keyboard SYSTEM "file://localhost/System/Library/DTDs/KeyboardLayout.dtd">
-<!--Released under MIT License. Copyright (c) 2019 Cyril Lugan.-->
-<!--Last edited by Ukelele version 3.3.0.249 on 2019-06-16 at 19:13 (CEST)-->
+<!--Released under MIT License. Copyright (c) 2019 Cyril Lugan-->
+<!--Last edited by Ukelele version 3.3.0.249 on 2019-06-17 at 19:24 (CEST)-->
 <keyboard group="126" id="-9260" name="French - NF" maxout="1">
     <layouts>
         <layout first="0" last="0" mapSet="ANSI" modifiers="commonModifiers"/>
@@ -380,12 +380,12 @@
             <key code="126" output="&#x001E;"/>
         </keyMap>
         <keyMap index="3">
-            <key code="0" output="Θ"/>
+            <key code="0" output="ϴ"/>
             <key code="1" output="ẞ"/>
             <key code="2" output=""/>
-            <key code="3" output=""/>
-            <key code="4" output=""/>
-            <key code="5" output=""/>
+            <key code="3" action="Currency 1"/>
+            <key code="4" action="Eu 1"/>
+            <key code="5" action="Greek 1"/>
             <key code="6" output="Ʒ"/>
             <key code="7" action="action"/>
             <key code="8" output="Ç"/>
@@ -560,6 +560,9 @@
         <action id="Currency">
             <when state="none" next="Currency"/>
         </action>
+        <action id="Currency 1">
+            <when state="none" next="Currency"/>
+        </action>
         <action id="D">
             <when state="none" output="D"/>
             <when state="Currency" output="₯"/>
@@ -578,6 +581,9 @@
         <action id="Eu">
             <when state="none" next="Eu"/>
         </action>
+        <action id="Eu 1">
+            <when state="none" next="Eu"/>
+        </action>
         <action id="F">
             <when state="none" output="F"/>
             <when state="Currency" output="₣"/>
@@ -591,6 +597,9 @@
             <when state="none" next="Grave"/>
         </action>
         <action id="Greek">
+            <when state="none" next="Greek"/>
+        </action>
+        <action id="Greek 1">
             <when state="none" next="Greek"/>
         </action>
         <action id="H">
@@ -879,7 +888,7 @@
         <when state="Diaeresis" output="¨"/>
         <when state="Eu" output=""/>
         <when state="Grave" output="`"/>
-        <when state="Greek" output="μ"/>
+        <when state="Greek" output="µ"/>
         <when state="Tilde" output="~"/>
     </terminators>
 </keyboard>
