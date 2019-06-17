@@ -1,7 +1,7 @@
 <?xml version="1.1" encoding="UTF-8"?>
 <!DOCTYPE keyboard SYSTEM "file://localhost/System/Library/DTDs/KeyboardLayout.dtd">
 <!--Released under MIT License. Copyright (c) 2019 Cyril Lugan.-->
-<!--Last edited by Ukelele version 3.3.0.249 on 2019-06-17 at 19:10 (CEST)-->
+<!--Last edited by Ukelele version 3.3.0.249 on 2019-06-17 at 19:24 (CEST)-->
 <keyboard group="126" id="-9260" name="French - NF" maxout="1">
     <layouts>
         <layout first="0" last="0" mapSet="ANSI" modifiers="commonModifiers"/>
@@ -380,7 +380,7 @@
             <key code="126" output="&#x001E;"/>
         </keyMap>
         <keyMap index="3">
-            <key code="0" output="Θ"/>
+            <key code="0" output="ϴ"/>
             <key code="1" output="ẞ"/>
             <key code="2" output=""/>
             <key code="3" action="Currency 1"/>
@@ -888,7 +888,7 @@
         <when state="Diaeresis" output="¨"/>
         <when state="Eu" output=""/>
         <when state="Grave" output="`"/>
-        <when state="Greek" output="μ"/>
+        <when state="Greek" output="µ"/>
         <when state="Tilde" output="~"/>
     </terminators>
 </keyboard>
