@@ -1,6 +1,6 @@
 <?xml version="1.1" encoding="UTF-8"?>
 <!DOCTYPE keyboard SYSTEM "file://localhost/System/Library/DTDs/KeyboardLayout.dtd">
-<!--Released under MIT License. Copyright (c) 2019 Cyril Lugan.-->
+<!--Released under MIT License. Copyright (c) 2019 Cyril Lugan-->
 <!--Last edited by Ukelele version 3.3.0.249 on 2019-06-17 at 19:24 (CEST)-->
 <keyboard group="126" id="-9260" name="French - NF" maxout="1">
     <layouts>
