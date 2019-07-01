@@ -109,6 +109,12 @@ def add_combination_by_letter(dead_key, upper_letter, mappings):
     key = latin_letter_keys[upper_letter]
     add_combination_by_key(dead_key, key, mappings)
 
+for dead_key in nf.letters_combinations[0][1:]:
+    for line in nf.letters_combinations[1:]:
+        for cases in line[1:]:
+            for i, letter in enumerate(cases):
+                combinations[(dead_key, line[i])] = letter
+
 for latin_upper, currency_symbols in nf.extended_currency_symbols.items():
     add_combination_by_letter('◌¤', latin_upper, currency_symbols)
 
