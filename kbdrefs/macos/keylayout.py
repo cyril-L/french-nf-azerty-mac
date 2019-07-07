@@ -5,9 +5,9 @@ import xml.etree.ElementTree as ET
 from collections import OrderedDict
 import re
 
-from kbdrefs import nf_z71_300 as nf
-from kbdrefs import iso_cei_9995_11 as iso9995_11
-from kbdrefs import iso_cei_9995_1 as iso9995_1
+from references import nf_z71_300 as nf
+from references import iso_cei_9995_11 as iso9995_11
+from references import iso_cei_9995_1 as iso9995_1
 
 # The keylayout file format is described in Apple Technical Note TN2056.
 # https://developer.apple.com/library/archive/technotes/tn2056/_index.html
@@ -19,7 +19,7 @@ from kbdrefs import iso_cei_9995_1 as iso9995_1
 # We need to strip some entities that ElementTree won’t parse, like &#x0008;
 # Those will be set back before writing to disk.
 
-with open('./kbdrefs/macos/French.keylayout', 'r') as f:
+with open('./references/macos/French.keylayout', 'r') as f:
     keylayout = f.read()
 keylayout = keylayout.replace('&#x', '#x')
 keylayout = ET.fromstring(keylayout)
@@ -86,10 +86,51 @@ for action in list(actions):
     actions.remove(action)
 
 combinations = {}
-combinations.update(iso9995_11.special_chars_combinations)
-combinations.update(nf.azerty_combinations)
+
+for other in [
+        iso9995_11.special_chars_from_dead_keys,
+        nf.latin_letters_with_diacritics,
+        nf.special_chars_from_diacritics,
+]:
+    combinations.update(other)
+
+def add_combination_by_key(dead_key, key, mappings):
+    for i, keymap in enumerate([
+            nf.azerty_group1_level1,
+            nf.azerty_group1_level2,
+            nf.azerty_group2_level1,
+            nf.azerty_group2_level2,
+    ]):
+        if len(mappings) > i and mappings[i]:
+            combinations[(dead_key, keymap[key])] = mappings[i]
+
+latin_letter_keys = {v: k for k, v in nf.azerty_group1_level2.items()}
+def add_combination_by_letter(dead_key, upper_letter, mappings):
+    key = latin_letter_keys[upper_letter]
+    add_combination_by_key(dead_key, key, mappings)
+
+for dead_key in nf.letters_combinations[0][1:]:
+    for line in nf.letters_combinations[1:]:
+        for cases in line[1:]:
+            for i, letter in enumerate(cases):
+                combinations[(dead_key, line[i])] = letter
+
+for latin_upper, currency_symbols in nf.extended_currency_symbols.items():
+    add_combination_by_letter('◌¤', latin_upper, currency_symbols)
+
+for latin_upper, greek_letters in nf.greek_letters.items():
+    add_combination_by_letter('◌µ', latin_upper, greek_letters)
+
+for latin_upper, extended_letters in nf.extended_latin_letters.items():
+    add_combination_by_letter('◌Eu', latin_upper, extended_letters)
+
+for key, extended_symbols in nf.extended_latin_symbols.items():
+    add_combination_by_key('◌Eu', key, extended_symbols)
+    extended_lower, extended_upper = extended_symbols
 
 for space in [' ', '\u00A0']:
+    for dead_key in nf.supported_diacritics:
+        combinations[(dead_key, space)] = iso9995_11.get_spacing_clone(dead_key)
     combinations[('◌¤', space)] = '¤'
     combinations[('◌µ', space)] = 'µ'
     combinations[('◌Eu', space)] = 'Eu'
@@ -187,32 +228,45 @@ alnum_keycodes = {
     '41': 'C10', '42': 'C12', '43': 'B08', '44': 'B10', '45': 'B06',
     '46': 'B07', '47': 'B09', '49': 'A03', '50': 'B00',
 }
-azerty_with_caps = {}
 
-for key, chars in nf.azerty_layout.items():
-    g1l1, g1l2, g2l1, g2l2 = chars
-    g1l1_caps = g1l2 if g1l2 in nf.azerty_caps_lock else g1l1
-    g1l2_caps = g1l1 if g1l2 in nf.azerty_caps_lock else g1l2
-    g2l1_caps = g2l2 if g2l2 in nf.azerty_caps_lock else g2l1
-    g2l2_caps = g2l1 if g2l2 in nf.azerty_caps_lock else g2l2
-    azerty_with_caps[key] = (
-        g1l1, g1l2, g2l1, g2l2,
-        g1l1_caps, g1l2_caps, g2l1_caps, g2l2_caps)
+def make_caps_lock_keyset(level1, level2, is_shift_pressed):
+    layer = level1.copy() if not is_shift_pressed else level2.copy()
+    for key in iso9995_1.alphanumeric_keys:
+        if level2[key] in nf.azerty_caps_lock:
+            if not is_shift_pressed:
+                layer[key] = level2[key]
+            else:
+                layer[key] = level1[key]
+    return layer
 
-for index in range(8):
-    key_map = ET.SubElement(key_map_set, "keyMap", index=str(index))
-    if index % 2 == 0:
-        defaults = level1_defaults
-    else:
-        defaults = level2_defaults
+azerty_group1_level1_maj = make_caps_lock_keyset(
+    nf.azerty_group1_level1, nf.azerty_group1_level2, False)
+
+azerty_group1_level2_maj = make_caps_lock_keyset(
+    nf.azerty_group1_level1, nf.azerty_group1_level2, True)
+
+azerty_group2_level1_maj = make_caps_lock_keyset(
+    nf.azerty_group2_level1, nf.azerty_group2_level2, False)
+
+azerty_group2_level2_maj = make_caps_lock_keyset(
+    nf.azerty_group2_level1, nf.azerty_group2_level2, True)
+
+for index, defaults, nf_layout in [
+        ('0', level1_defaults, nf.azerty_group1_level1),
+        ('1', level2_defaults, nf.azerty_group1_level2),
+        ('2', level1_defaults, nf.azerty_group2_level1),
+        ('3', level2_defaults, nf.azerty_group2_level2),
+        ('4', level1_defaults, azerty_group1_level1_maj),
+        ('5', level2_defaults, azerty_group1_level2_maj),
+        ('6', level1_defaults, azerty_group2_level1_maj),
+        ('7', level2_defaults, azerty_group2_level2_maj),
+]:
+    key_map = ET.SubElement(key_map_set, "keyMap", index=index)
     for key in defaults:
         if key in alnum_keycodes:
-            out = azerty_with_caps[alnum_keycodes[key]][index]
+            out = nf_layout[alnum_keycodes[key]]
         else:
             out = defaults[key]
-        # TODO check what to do when no char defined
-        if out == None:
-            out = ''
         if actions.find(".//action[@id = {}]".format(xpath_str(out))):
             ET.SubElement(key_map, "key", code=key, action=out)
         else:
