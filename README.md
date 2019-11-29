@@ -2,15 +2,6 @@
 
 Utilisez votre clavier existant pour tester la nouvelle disposition des symboles. Vous pouvez l’apprendre en vous aidant du clavier virtuel de macOS ou du site <https://norme-azerty.fr>.
 
-Ce pilote implémente :
-
-- l’ensemble des caractères requis pour saisir du texte en français (par exemple É, œ et «)
-- le « Mode monétaire »
-- le « Mode lettres grecques »
-- le « Mode caractères européens »
-
-Il n’implémente pas encore la plupart des diacritiques peu utilisés en France.
-
 ## Installation
 
 - Téléchargez le dernier pilote publié sur la page [Releases](https://github.com/cyril-L/normalized-azerty/releases)
@@ -23,13 +14,28 @@ Il n’implémente pas encore la plupart des diacritiques peu utilisés en Franc
 - Activez la disposition depuis les *Préférences Système* → `Clavier` → `Méthodes et saisie` → `+` → `French - NF`
 - Redémarrez votre session
 
+
+## Mise à jour
+
 Pour mettre à jour le pilote, remplacez le fichier `.bundle` existant et redémarrez votre session.
+
+## Touches @ et &lt; inversées
+
+Si les touches <kbd>@</kbd> et <kbd>&lt;</kbd> sont inversées, il est possible que macOS n’ai pas correctement identifié le clavier.
+
+Voir [Fix inverted keys on a Mac](https://cyril.lugan.fr/misc/fix-mac-inverted-keys.html).
 
 ## Contribution
 
+Un script Python est utilisé pour générer le fichier [French - NF.keylayout](https://github.com/cyril-L/normalized-azerty/blob/master/French%20NF.bundle/Contents/Resources/French%20-%20NF.keylayout):
+
+```
+./make_macos_keylayout.py > French\ NF.bundle/Contents/Resources/French\ -\ NF.keylayout
+```
+
+Ce fichier généré est également versionné dans ce dépot, il est possible de le modifier avec le logiciel [Ukelele](http://scripts.sil.org/ukelele).
+
 - Rapportez un problème ou une suggestion sur la page [Issues](https://github.com/cyril-L/normalized-azerty/issues)
-- Modifiez la disposition et soumettez une *Pull Request*
-- La disposition a été créée avec le logiciel [Ukelele](http://scripts.sil.org/ukelele). Il est aussi possible de modifier directement le fichier [French - NF.keylayout](https://github.com/cyril-L/normalized-azerty/blob/master/French%20NF.bundle/Contents/Resources/French%20-%20NF.keylayout) manuellement.
 - La disposition suit la description présentée sur le site <https://norme-azerty.fr>.
 - Les caractères Unicode ont principalement été récupérés sur :
   - <https://bepo.fr/wiki/Touches_mortes>

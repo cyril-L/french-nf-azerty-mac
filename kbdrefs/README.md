@@ -6,7 +6,7 @@ By including this package in your python script, you can directly access the dat
 
 Notes taken while consulting the standard
 
-- Sumarized
+- Summarized
 - Often redirected from a standard to another -> Usage of hypertext links
 - Often displaying data that cannot, or even copy pasted -> Python
 
