@@ -44,7 +44,7 @@ def python_blocks_in_markdown(filename):
                         yield "\n".join(block)
                     except:
                         sys.stderr.write(
-                            "Error while parsing block in {},\nline {}\n"
+                            "Error while parsing block in {}, line {}\n"
                             .format(filename, block_lineno))
                         raise
                     block = None
