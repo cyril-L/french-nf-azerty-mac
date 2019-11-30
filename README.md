@@ -25,15 +25,21 @@ Si les touches <kbd>@</kbd> et <kbd>&lt;</kbd> sont inversées, il est possible 
 
 Voir [Fix inverted keys on a Mac](https://cyril.lugan.fr/misc/fix-mac-inverted-keys.html).
 
+## Build
+
+Pour faire une nouvelle release:
+
+- Générer le fichier [French - NF.keylayout](https://github.com/cyril-L/normalized-azerty/blob/master/French%20NF.bundle/Contents/Resources/French%20-%20NF.keylayout). Ce fichier est également versionné, il est possible de le modifier avec le logiciel [Ukelele](http://scripts.sil.org/ukelele).
+  ```
+  ./make_macos_keylayout.py > French\ NF.bundle/Contents/Resources/French\ -\ NF.keylayout
+  ```
+- Mettre à jour le fichier [Info.plist](https://github.com/cyril-L/normalized-azerty/blob/master/French%20NF.bundle/Contents/Info.plist) manuellement.
+- Compresser `French NF.bundle`
+  ```
+  zip -r normalized-azerty-v0.0.7.zip French\ NF.bundle/
+  ```
+
 ## Contribution
-
-Un script Python est utilisé pour générer le fichier [French - NF.keylayout](https://github.com/cyril-L/normalized-azerty/blob/master/French%20NF.bundle/Contents/Resources/French%20-%20NF.keylayout):
-
-```
-./make_macos_keylayout.py > French\ NF.bundle/Contents/Resources/French\ -\ NF.keylayout
-```
-
-Ce fichier généré est également versionné dans ce dépot, il est possible de le modifier avec le logiciel [Ukelele](http://scripts.sil.org/ukelele).
 
 - Rapportez un problème ou une suggestion sur la page [Issues](https://github.com/cyril-L/normalized-azerty/issues)
 - La disposition suit la description présentée sur le site <https://norme-azerty.fr>.
