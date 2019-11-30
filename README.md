@@ -2,6 +2,8 @@
 
 Utilisez votre clavier existant pour tester la nouvelle disposition des symboles. Vous pouvez l’apprendre en vous aidant du clavier virtuel de macOS ou du site <https://norme-azerty.fr>.
 
+Une transcription de la norme NF Z71-300 est utilisée pour générer le pilote: [kbdrefs/nf_z71_300.md](kbdrefs/nf_z71_300.md).
+
 ## Installation
 
 - Téléchargez le dernier pilote publié sur la page [Releases](https://github.com/cyril-L/normalized-azerty/releases)
