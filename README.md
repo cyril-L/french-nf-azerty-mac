@@ -6,26 +6,35 @@ Une transcription de la norme NF Z71-300 est utilisée pour générer le pilote:
 
 ## Installation
 
-- Téléchargez le dernier pilote publié sur la page [Releases](https://github.com/cyril-L/normalized-azerty/releases)
-- Décompressez le fichier `.zip`
-- Déplacez le fichier `French NF.bundle` dans la bibliothèque :
+Pour utiliser un nouveau clavier externe :
+
+- Brancher le clavier avant d’installer le pilote.
+- Vérifier que le type de clavier détecté est bien européen « ISO/IEC 9995 ».
+- Si ce n’est pas le cas, revenir à l’étape précédente. Au moment d’appuyer sur la touche à côté de Shift, appuyer sur une ou plusieurs autres touches jusqu’à ce que l’assistant vous informe qu’il ne parvient pas à détecter le type de clavier. Choisir le clavier européen « ISO/IEC 9995 ».
+
+![Keyboard Setup Assistant ISO/IEC 9995](https://cyril.lugan.fr/assets/misc/fix-mac-inverted-keys/select-iso-keyboard.png)
+
+Pour installer le pilote :
+
+- Télécharger le dernier pilote publié sur la page [Releases](https://github.com/cyril-L/normalized-azerty/releases)
+- Décompresser le fichier `.zip`
+- Déplacer le fichier `French NF.bundle` dans la bibliothèque :
   - Depuis le *Finder* → `Aller` → `Aller au dossier`
   - Pour installer le pilote uniquement pour votre utilisateur, entrez `~/Library/Keyboard Layouts`
   - Pour installer le pilote pour tous les utilisateurs, entrez `/Library/Keyboard Layouts` (vous devez disposer des droits d’administration)
-  - Déplacez le fichier `French NF.bundle` dans le dossier `Keyboard Layouts`
-- Activez la disposition depuis les *Préférences Système* → `Clavier` → `Méthodes et saisie` → `+` → `French - NF`
-- Redémarrez votre session
-
+  - Déplacer le fichier `French NF.bundle` dans le dossier `Keyboard Layouts`
+- Activer la disposition depuis les *Préférences Système* → `Clavier` → `Méthodes et saisie` → `+` → `French - NF`
+- Redémarrer la session
 
 ## Mise à jour
 
-Pour mettre à jour le pilote, remplacez le fichier `.bundle` existant et redémarrez votre session.
+Pour mettre à jour le pilote, remplacer le fichier `.bundle` existant et redémarrer la session.
 
 ## Touches @ et &lt; inversées
 
 Si les touches <kbd>@</kbd> et <kbd>&lt;</kbd> sont inversées, il est possible que macOS n’ai pas correctement identifié le clavier.
 
-Voir [Fix inverted keys on a Mac](https://cyril.lugan.fr/misc/fix-mac-inverted-keys.html).
+Voir [Issue #9](https://github.com/cyril-L/normalized-azerty/issues/9) ou [Fix inverted keys on a Mac](https://cyril.lugan.fr/misc/fix-mac-inverted-keys.html).
 
 ## Build
 
