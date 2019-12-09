@@ -10,6 +10,8 @@
 	<string>0.0.7</string>
 	<key>KLInfo_French - NF</key>
 	<dict>
+		<key>TICapsLockLanguageSwitchCapable</key>
+		<false/>
 		<key>TISInputSourceID</key>
 		<string>org.sil.ukelele.keyboardlayout.frenchnf.french-nf</string>
 		<key>TISIntendedLanguage</key>
