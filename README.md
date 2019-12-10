@@ -2,7 +2,7 @@
 
 Utilisez votre clavier existant pour tester la nouvelle disposition des symboles. Vous pouvez l’apprendre en vous aidant du clavier virtuel de macOS ou du site <https://norme-azerty.fr>.
 
-Une transcription de la norme NF Z71-300 est utilisée pour générer le pilote: [kbdrefs/nf_z71_300.md](kbdrefs/nf_z71_300.md).
+Une transcription de la norme NF Z 71‐300 A est utilisée pour générer le pilote: [kbdrefs/nf_z71_300.md](kbdrefs/nf_z71_300.md).
 
 ## Installation
 
@@ -23,7 +23,7 @@ Pour installer le pilote :
   - Pour installer le pilote uniquement pour votre utilisateur, entrez `~/Library/Keyboard Layouts`
   - Pour installer le pilote pour tous les utilisateurs, entrez `/Library/Keyboard Layouts` (vous devez disposer des droits d’administration)
   - Déplacer le fichier `French NF.bundle` dans le dossier `Keyboard Layouts`
-- Activer la disposition depuis les *Préférences Système* → `Clavier` → `Méthodes et saisie` → `+` → `French - NF`
+- Activer la disposition depuis les *Préférences Système* → `Clavier` → `Méthodes et saisie` → `+` → `Français normalisé (AZERTY)`
 - Redémarrer la session
 
 ## Mise à jour
