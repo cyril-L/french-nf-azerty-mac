@@ -57,3 +57,4 @@ Pour faire une nouvelle release:
 - Les caractères Unicode ont principalement été récupérés sur :
   - <https://bepo.fr/wiki/Touches_mortes>
   - <https://github.com/marcbal/Printable-AZERTY-NF>
+- Des informations sur le format du fichier `.keylayout` sont disponibles sur [Technical Note TN2056 - Installable Keyboard Layouts](https://developer.apple.com/library/archive/technotes/tn2056/_index.html)

@@ -7,7 +7,7 @@
 	<key>CFBundleName</key>
 	<string>French NF</string>
 	<key>CFBundleVersion</key>
-	<string>0.0.8</string>
+	<string>0.0.9</string>
 	<key>KLInfo_French - NF</key>
 	<dict>
 		<key>TICapsLockLanguageSwitchCapable</key>

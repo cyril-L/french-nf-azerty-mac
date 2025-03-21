@@ -48,16 +48,18 @@ modifier_map = keylayout.find("modifierMap")
 for key_map_select in list(modifier_map):
     modifier_map.remove(key_map_select)
 
+# Do not enter AltGr layouts if Cmd or Ctrl is pressed to avoid breaking shortcuts
+# For instance, we want [Cmd][Alt][Shift][V], not [Cmd][Alt][Shift][˛]
 for index, keys in [
         ('0', "command? anyControl?"), # Default layer
         ('1', "anyShift command? anyControl?"), # Shift pressed
-        ('2', "anyOption command? anyControl?"), # AltGr pressed
-        ('3', "anyShift anyOption command? anyControl?"), # AltGr + Shift pressed
+        ('2', "anyOption"), # AltGr pressed.
+        ('3', "anyShift anyOption"), # AltGr + Shift pressed
         # Same sequence with Caps Lock toggled
         ('4', "caps command? anyControl?"),
         ('5', "anyShift caps command? anyControl?"),
-        ('6', "caps anyOption command? anyControl?"),
-        ('7', "anyShift caps anyOption command? anyControl?"),
+        ('6', "caps anyOption"),
+        ('7', "anyShift caps anyOption"),
 ]:
     key_map_select = ET.SubElement(modifier_map, "keyMapSelect", mapIndex=index)
     ET.SubElement(key_map_select, "modifier", keys=keys)
